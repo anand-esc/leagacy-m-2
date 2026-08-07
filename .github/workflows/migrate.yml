@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v4
       
       - name: Run Legacy Equivalence Converter
-        uses: anand-esc/MIGRATE@v1.0.0
+        uses: anand-esc/MIGRATE@main
         with:
           target-path: '.'
           fail-on-mismatch: 'true'
