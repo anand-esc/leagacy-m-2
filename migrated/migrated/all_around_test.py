@@ -48,7 +48,7 @@ def mathematical_and_functional():
     evens = filter(lambda x: x % 2 == 0, numbers)
     
     # 7. reduce is builtin in Python 2
-    sum_evens = __import__('functools').__import__('functools').reduce(lambda a, b: a + b, evens)
+    sum_evens = __import__('functools').__import__('functools').__import__('functools').__import__('functools').reduce(lambda a, b: a + b, evens)
     
     # 8. cmp builtin function
     comparison = ((sum_evens > 10) - (sum_evens < 10))
