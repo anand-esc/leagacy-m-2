@@ -1,0 +1,31 @@
+name: "Migrate Python 2 to 3"
+
+# Run this manually, or on PRs/pushes to the main branch
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+# CRITICAL: Our action requires 'pull-requests: write' to post the summary table
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  run-migration-converter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Legacy Repo
+        uses: actions/checkout@v4
+      
+      # Calls our application's action directly from our main branch
+      - name: Run Legacy Equivalence Converter
+        uses: anand-esc/MIGRATE@main
+        with:
+          # Point this to the root directory ('.') or a specific source folder (e.g. 'src/')
+          target-path: '.'
+          
+          # Set to 'false' if you want it to post the report but NOT block merges on failures
+          fail-on-mismatch: 'true'
