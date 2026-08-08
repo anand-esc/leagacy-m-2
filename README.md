@@ -1,4 +1,4 @@
-# Legacy Python 2 - Comprehensive Testbed
+# Legacy Python 2.0 - Comprehensive Testbed
 
 This repository provides a comprehensive suite of Python 2.x specific syntax, types, and standard library behaviors. It is designed to thoroughly test the boundaries of a Python 2 to 3 conversion tool, checking if it catches everything from structural syntax changes to nuanced standard library renames.
 
